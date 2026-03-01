@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Video Center Series Metadata",
+  "type": "object",
+  "required": ["id", "title", "year", "description", "poster", "tags", "seasons"],
+  "properties": {
+    "id": { "type": "string" },
+    "type": { "type": "string", "const": "series" },
+    "title": { "type": "string" },
+    "year": { "type": "integer" },
+    "description": { "type": "string" },
+    "poster": { "type": "string" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "seasons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["season", "episodes"],
+        "properties": {
+          "season": { "type": "integer" },
+          "title": { "type": "string" },
+          "episodes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["episode", "title", "video"],
+              "properties": {
+                "episode": { "type": "integer" },
+                "title": { "type": "string" },
+                "description": { "type": "string" },
+                "duration": { "type": "number" },
+                "video": { "type": "string" },
+                "subtitles": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["label", "file"],
+                    "properties": {
+                      "label": { "type": "string" },
+                      "lang": { "type": "string" },
+                      "file": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

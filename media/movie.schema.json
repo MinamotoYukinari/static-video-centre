@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Video Center Movie Metadata",
+  "type": "object",
+  "required": ["id", "title", "year", "description", "duration", "tags", "video", "poster"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique movie id, also used for watch progress key"
+    },
+    "title": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "number",
+      "description": "Duration in seconds"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "video": {
+      "type": "string",
+      "description": "Video file name inside folder, e.g. movie.mp4 or movie.mkv"
+    },
+    "poster": {
+      "type": "string",
+      "description": "Poster file name, usually poster.jpg"
+    },
+    "durationHint": {
+      "type": "string",
+      "description": "Optional UI hint, e.g. '120 分鐘'"
+    },
+    "subtitles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "label"],
+        "properties": {
+          "file": { "type": "string" },
+          "lang": { "type": "string" },
+          "label": { "type": "string" }
+        }
+      }
+    }
+  }
+}

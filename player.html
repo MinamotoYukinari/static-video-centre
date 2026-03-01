@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>播放器 | Video Center</title>
+    <link href="./vendor/video-js.css" rel="stylesheet" />
+    <link href="https://vjs.zencdn.net/8.21.0/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="player">
+    <header class="topbar player-topbar">
+      <a class="back-link" href="index.html">← 返回片牆</a>
+      <div id="playerTitle" class="player-title">載入中...</div>
+    </header>
+
+    <main class="player-container">
+      <div class="video-wrapper">
+        <video
+          id="videoPlayer"
+          class="video-js vjs-big-play-centered"
+          controls
+          preload="metadata"
+          playsinline
+        ></video>
+      </div>
+
+      <section id="seriesPanel" class="series-panel hidden" aria-live="polite">
+        <div class="series-head">
+          <label for="seasonSelect">季別</label>
+          <select id="seasonSelect" class="season-select"></select>
+        </div>
+        <div id="episodeList" class="episode-list"></div>
+      </section>
+
+      <p id="playerMeta" class="player-meta"></p>
+    </main>
+
+    <script src="./vendor/video.min.js"></script>
+    <script src="https://vjs.zencdn.net/8.21.0/video.min.js"></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>

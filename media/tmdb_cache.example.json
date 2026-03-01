@@ -1,0 +1,21 @@
+{
+  "language": "zh-TW",
+  "items": [
+    {
+      "folder": "movie-a",
+      "media_type": "movie",
+      "title": "電影 A",
+      "year": 2024,
+      "description": "來自 TMDB 的繁中簡介",
+      "tags": ["Action", "Sci-Fi"]
+    },
+    {
+      "folder": "series-a",
+      "media_type": "series",
+      "title": "影集 A",
+      "year": 2025,
+      "description": "來自 TMDB 的繁中影集簡介",
+      "tags": ["Drama", "Sci-Fi"]
+    }
+  ]
+}

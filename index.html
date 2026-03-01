@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Center</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="index">
+    <header class="topbar">
+      <div class="brand">Video Center</div>
+      <div class="controls">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="搜尋片名..."
+          aria-label="搜尋片名"
+        />
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="filters">
+        <div id="tagFilters" class="tag-filters"></div>
+      </section>
+
+      <section>
+        <div id="statusMessage" class="status-message">載入中...</div>
+        <div id="mediaGrid" class="media-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
