@@ -1,3 +1,9 @@
 /DIRECTORY_STRUCTURE.md
 /TEST_DEPLOYMENT_GUIDE.md
-/TEST_DEPLOYMENT_GUIDE.zh-CN.md
+/TEST_DEPLOYMENT_GUIDE.zh-CN.md/
+/media/NCIS/
+/media/Titanic/
+/tools/__pycache__/
+/media/.tmdb_cache.json
+/tools/generate_library_old.py
+/media/library.json
