@@ -38,6 +38,37 @@
 
     <script src="./vendor/video.min.js"></script>
     <script src="https://vjs.zencdn.net/8.21.0/video.min.js"></script>
+    <script>
+      document.addEventListener(
+        "change",
+        function (event) {
+          const target = event.target;
+          if (!(target instanceof HTMLSelectElement)) return;
+
+          const seasonSelect = document.getElementById("seasonSelect");
+          if (!(seasonSelect instanceof HTMLSelectElement)) return;
+
+          const url = new URL(window.location.href);
+
+          if (target.id === "seasonSelect") {
+            url.searchParams.set("season", target.value);
+            url.searchParams.delete("episode");
+            event.stopImmediatePropagation();
+            window.location.href = url.toString();
+            return;
+          }
+
+          const inEpisodeList = target.closest("#episodeList");
+          if (inEpisodeList) {
+            url.searchParams.set("season", seasonSelect.value);
+            url.searchParams.set("episode", target.value);
+            event.stopImmediatePropagation();
+            window.location.href = url.toString();
+          }
+        },
+        true
+      );
+    </script>
     <script src="script.js" defer></script>
   </body>
 </html>
