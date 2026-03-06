@@ -1,4 +1,5 @@
 # Video.js Local Assets
+[中文说明](README_CN.md)
 
 Place local Video.js assets here for offline or restricted-network environments:
 
