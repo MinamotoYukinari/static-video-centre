@@ -151,6 +151,41 @@ python -m http.server 8000
 開啟：
 - `http://localhost:8000/index.html`
 
+## Docker 部署（含 media 資料夾映射）
+
+### 1) 可選：建立 `.env`
+
+將 `.env.example` 複製為 `.env` 後，依需求修改：
+
+```bash
+cp .env.example .env
+```
+
+環境變數說明：
+- `APP_PORT`：主機對外埠，映射到容器 `80`（預設 `8080`）
+- `MEDIA_PATH`：主機上的 media 路徑，映射到 `/usr/share/nginx/html/media`（預設 `./media`）
+
+Windows 路徑範例：
+
+```env
+MEDIA_PATH=C:/Users/YourName/Videos/static-video-centre-media
+```
+
+### 2) 建置並啟動
+
+```bash
+docker compose up -d --build
+```
+
+開啟：
+- `http://localhost:8080/index.html`（或你設定的 `APP_PORT`）
+
+### 3) 停止
+
+```bash
+docker compose down
+```
+
 ## 媒體檔案放置建議
 
 - 電影：

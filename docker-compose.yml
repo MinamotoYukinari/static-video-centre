@@ -1,0 +1,11 @@
+services:
+  static-video-centre:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: static-video-centre
+    ports:
+      - "${APP_PORT:-8080}:80"
+    volumes:
+      - "${MEDIA_PATH:-./media}:/usr/share/nginx/html/media:ro"
+    restart: unless-stopped

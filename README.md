@@ -145,6 +145,41 @@ python -m http.server 8000
 Open:
 - `http://localhost:8000/index.html`
 
+## Docker Deployment (with media folder mapping)
+
+### 1) Optional: create `.env`
+
+Copy `.env.example` to `.env` and adjust values:
+
+```bash
+cp .env.example .env
+```
+
+Environment variables:
+- `APP_PORT`: host port mapped to container port `80` (default `8080`)
+- `MEDIA_PATH`: host path mapped to `/usr/share/nginx/html/media` (default `./media`)
+
+Windows path example:
+
+```env
+MEDIA_PATH=C:/Users/YourName/Videos/static-video-centre-media
+```
+
+### 2) Build and start
+
+```bash
+docker compose up -d --build
+```
+
+Open:
+- `http://localhost:8080/index.html` (or your custom `APP_PORT`)
+
+### 3) Stop
+
+```bash
+docker compose down
+```
+
 ## Media File Placement Recommendations
 
 - Movies:
